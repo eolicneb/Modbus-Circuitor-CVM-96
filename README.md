@@ -2,7 +2,7 @@
 Driver for remote registers reading for the Circuitor CVM-96 supply network analyzer based on MinimalModbus library.
 
 https://pypi.org/project/MinimalModbus/
-Descargar usando >> pip install MinimalModbus
+For download >> pip install MinimalModbus
 
 
 Circuitor CVM-96 analyzer takes only readings to the registers. The get_ functions implemented in the CircuitorCVM96 class exhaust the whole possible readings according to the manual uploaded to the url
