@@ -1,0 +1,6 @@
+23/11/18 20:22
+Se observa q los datos relevados corresponden bastante fielmente a los observado en pantalla del Circuitor, excepto algunas columnas
+Se deduce que a los valores recibidos en la columna "Energia Activa" se le están sumando de manera sistemática 8,2E+8 que y a la de "Energia Reactiva Capacitiva" 7.0E+8, mientras que la de "Energia Reactiva Inductiva" es recibida fielmente. Como es un error sistematico q puede ser eliminado de los datos recibidos se mantiene el software tal cual, y se deja constancia para futuros cambios.
+Caso similar son las lecturas de "Factor de Potencia", ya que no fue contemplada la posibilidad de que el Circuitor devolviera valores negativos, que es el caso presente. Debe reverse para la próxima actualización del soft.
+Los datos desde "Energia Aparente" en adelante debieron ser removidos de la lista de requeridos porq el Circuitor devolvía error "83 02". Debe ser analizado posteriormente.
+La hora registrada difiere 3hs respecto a la hora local. Es probable q esté usando GMT+0.

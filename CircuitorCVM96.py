@@ -2,14 +2,6 @@
 # -*- coding: utf-8 -*-
 
 '''
-ATENCION:
-Es preciso corregir todas las funciones de lectura y
-reemplazar read_register por read_registers con
-numberOfRegisters=2. Luego a los bytes devueltos va a
-ser preciso sumarlos para devolver un solo numero al
-cliente de la funcion. 
-
-
 https://pypi.org/project/MinimalModbus/
 Descargar usando >> pip install MinimalModbus
 
@@ -72,6 +64,19 @@ import minimalmodbus
 
 
 class CircuitorCVM96( minimalmodbus.Instrument ):
+
+  def read_register(self, reg, decimals=0):
+    ''' fue preciso sobreescribir esta funcion
+    para no cambiar la libreria entera. La funcion
+    read_register() de minimalmodbus pide leer un
+    solo registro por vez. Para leer el Circuitor
+    se precisan pedir dos registros o una cantidad
+    par. Para hacer eso la funcion adecuada es
+    read_registers()'''
+    inp = self.read_registers(reg,numberOfRegisters=2)
+    from time import sleep
+    #sleep(0.1)
+    return (inp[1]+inp[0]*2**16)/10.**decimals
 
   def __init__(self, portname, slaveaddress):
     minimalmodbus.Instrument.__init__(self, portname, slaveaddress)
