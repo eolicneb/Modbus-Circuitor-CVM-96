@@ -1,4 +1,4 @@
-## Miium Voltage Analyzer
+## Midium Voltage Input Analyzer
 In order to keep survillance on the power consumption in a factory, a Circuitor-CVM-96 was installed. The driver to read and write to the Circuitor had to be factored. The "modbus" protocol is an industrial standard and the simple MinimalModbus module was choosen as a base for our driver.
 The Modbus002.py script takes care of the logic for collecting, saving and broadcasting the data. The server receives the data in a MySQL database and exposes it on a webpage that can be browsed from everywhere in the local net.
 
